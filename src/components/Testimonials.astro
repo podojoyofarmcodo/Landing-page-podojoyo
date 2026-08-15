@@ -1,0 +1,52 @@
+---
+const testimonials = [
+  {
+    name: 'Budi Santoso',
+    role: 'Pemilik Kedai Kopi lokal',
+    content: 'Kualitas susunya sangat konsisten. Saya selalu memesan yang raw milk untuk kafe saya. Pengiriman selalu tepat waktu setiap paginya.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Ibu Ratna',
+    role: 'Ibu Rumah Tangga',
+    content: 'Anak-anak saya suka sekali dengan susu pasteurisasinya. Rasanya gurih alami dan tidak bikin eneg seperti susu kemasan pabrik.',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  }
+];
+---
+
+<section class="py-16 bg-brand-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-brand-dark sm:text-4xl">
+        Kata Pelanggan Kami
+      </h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+        Kepercayaan mereka adalah bukti komitmen kami pada kualitas.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 relative">
+          <!-- Quote Icon -->
+          <div class="absolute top-8 right-8 text-brand-accent/20">
+            <svg class="h-12 w-12" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.896 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+          </div>
+          
+          <p class="text-gray-600 text-lg relative z-10 italic mb-6">"{testimonial.content}"</p>
+          
+          <div class="flex items-center gap-4 relative z-10">
+            <img class="h-12 w-12 rounded-full object-cover" src={testimonial.avatar} alt={testimonial.name} loading="lazy" />
+            <div>
+              <p class="text-brand-dark font-bold">{testimonial.name}</p>
+              <p class="text-gray-500 text-sm">{testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

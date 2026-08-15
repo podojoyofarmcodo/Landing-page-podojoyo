@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness", // or "Farm"
+  "name": "Peternakan Podojoyo",
+  "image": "https://via.placeholder.com/800x600",
+  "@id": "",
+  "url": Astro.url,
+  "telephone": "081234567890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pujon",
+    "addressLocality": "Malang",
+    "addressRegion": "Jawa Timur",
+    "addressCountry": "ID"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "06:00",
+    "closes": "18:00"
+  }
+};
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

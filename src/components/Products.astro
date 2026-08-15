@@ -1,0 +1,61 @@
+---
+const products = [
+  {
+    name: 'Susu Mentah (Raw Milk)',
+    volume: '1 Liter',
+    price: 'Rp 15.000',
+    description: 'Susu segar yang baru diperah. Cocok untuk Anda yang ingin mempasteurisasi sendiri di rumah atau untuk kebutuhan bahan baku kedai.',
+    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    badge: 'Paling Segar'
+  },
+  {
+    name: 'Susu Pasteurisasi',
+    volume: '1 Liter',
+    price: 'Rp 18.000',
+    description: 'Telah melalui proses pasteurisasi 72°C selama 15 detik. Langsung bisa diminum, aman, namun gizi tetap utuh.',
+    image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    badge: 'Siap Minum'
+  }
+];
+---
+
+<section id="produk" class="py-16 bg-brand-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-brand-dark sm:text-4xl">
+        Katalog Produk Kami
+      </h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+        Pilih varian susu sesuai kebutuhan Anda. Kami menyiapkan yang terbaik dari kandang kami.
+      </p>
+    </div>
+
+    <div class="mt-12 max-w-lg mx-auto grid gap-8 lg:grid-cols-2 lg:max-w-none">
+      {products.map((product) => (
+        <div class="flex flex-col rounded-2xl shadow-lg overflow-hidden bg-white border border-gray-100 hover:shadow-xl transition-shadow">
+          <div class="flex-shrink-0 relative">
+            <img class="h-64 w-full object-cover" src={product.image} alt={product.name} loading="lazy" />
+            <div class="absolute top-4 right-4 bg-brand-accent text-white px-3 py-1 rounded-full text-sm font-bold shadow">
+              {product.badge}
+            </div>
+          </div>
+          <div class="flex-1 p-6 flex flex-col justify-between">
+            <div class="flex-1">
+              <p class="text-sm font-medium text-brand-accent mb-1">{product.volume}</p>
+              <a href="#" class="block mt-2">
+                <p class="text-2xl font-bold text-brand-dark">{product.name}</p>
+                <p class="mt-3 text-base text-gray-600 line-clamp-3">{product.description}</p>
+              </a>
+            </div>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-2xl font-bold text-gray-900">{product.price}</span>
+              <a href={`https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20memesan%20${encodeURIComponent(product.name)}`} target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-brand-dark hover:bg-gray-800 text-white text-sm font-medium rounded-full transition-colors">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

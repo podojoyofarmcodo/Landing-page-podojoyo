@@ -1,0 +1,55 @@
+---
+---
+<header class="sticky top-0 z-50 bg-brand-primary/90 backdrop-blur-md border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="text-2xl font-bold text-brand-dark tracking-tight">Podojoyo</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#tentang-kami" class="text-gray-600 hover:text-brand-accent transition-colors font-medium">Tentang Kami</a>
+        <a href="#keunggulan" class="text-gray-600 hover:text-brand-accent transition-colors font-medium">Keunggulan</a>
+        <a href="#produk" class="text-gray-600 hover:text-brand-accent transition-colors font-medium">Produk</a>
+        <a href="#kontak" class="text-gray-600 hover:text-brand-accent transition-colors font-medium">Kontak</a>
+      </nav>
+      <div class="hidden md:flex items-center">
+        <a href="https://wa.me/6281234567890?text=Halo%20Peternakan%20Podojoyo,%20saya%20ingin%20memesan%20susu" target="_blank" rel="noopener noreferrer" class="bg-brand-accent hover:bg-green-800 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm">
+          Pesan Sekarang
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button type="button" class="text-gray-600 hover:text-brand-dark focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-btn">
+          <span class="sr-only">Buka menu utama</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div class="md:hidden hidden bg-brand-primary border-b border-gray-200 absolute w-full shadow-lg" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#tentang-kami" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-accent hover:bg-gray-50 rounded-md">Tentang Kami</a>
+      <a href="#keunggulan" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-accent hover:bg-gray-50 rounded-md">Keunggulan</a>
+      <a href="#produk" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-accent hover:bg-gray-50 rounded-md">Produk</a>
+      <a href="#kontak" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-accent hover:bg-gray-50 rounded-md">Kontak</a>
+      <a href="https://wa.me/6281234567890?text=Halo%20Peternakan%20Podojoyo,%20saya%20ingin%20memesan%20susu" target="_blank" rel="noopener noreferrer" class="block mt-4 text-center bg-brand-accent hover:bg-green-800 text-white px-5 py-2 rounded-full font-medium transition-colors">
+        Pesan Sekarang
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

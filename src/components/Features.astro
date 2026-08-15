@@ -1,0 +1,57 @@
+---
+const features = [
+  {
+    title: 'Sapi Bebas Stres',
+    description: 'Sapi perah kami dirawat di lingkungan yang nyaman dengan udara segar dataran tinggi untuk menjamin kualitas susu terbaik.',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>`
+  },
+  {
+    title: 'Pakan Organik',
+    description: '100% menggunakan rumput alami dan pakan berkualitas tanpa campuran bahan kimia sintetik yang berbahaya.',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>`
+  },
+  {
+    title: 'Pasteurisasi Higienis',
+    description: 'Bagi varian pasteurisasi, kami menggunakan alat modern bersuhu presisi untuk membunuh bakteri merugikan tanpa merusak nutrisi.',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>`
+  },
+  {
+    title: 'Pengiriman Dingin',
+    description: 'Susu selalu diantar dalam kondisi dingin yang terjaga hingga sampai ke depan pintu rumah Anda di hari yang sama.',
+    icon: `<svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>`
+  }
+];
+---
+
+<section id="keunggulan" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-brand-dark sm:text-4xl">
+        Kualitas Susu Asli Peternakan
+      </h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+        Berkomitmen penuh dari hulu ke hilir untuk memastikan Anda hanya mendapatkan susu sapi terbaik setiap harinya.
+      </p>
+    </div>
+
+    <div class="mt-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature) => (
+          <div class="flex flex-col bg-brand-primary p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-center h-14 w-14 rounded-full bg-brand-accent text-white mb-6" set:html={feature.icon} />
+            <h3 class="text-xl font-bold text-brand-dark mb-3">{feature.title}</h3>
+            <p class="text-gray-600 flex-1 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
