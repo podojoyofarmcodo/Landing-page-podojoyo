@@ -1,16 +1,14 @@
 ---
 const testimonials = [
   {
-    name: 'Budi Santoso',
-    role: 'Pemilik Kedai Kopi lokal',
-    content: 'Kualitas susunya sangat konsisten. Saya selalu memesan yang raw milk untuk kafe saya. Pengiriman selalu tepat waktu setiap paginya.',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    name: 'Warga Sekitar',
+    role: 'Pelanggan Setia',
+    content: 'Susunya enak sekali dan segar. Sangat cocok untuk diminum langsung di pagi hari, rasanya jauh lebih gurih dibandingkan susu biasa.',
   },
   {
-    name: 'Ibu Ratna',
-    role: 'Ibu Rumah Tangga',
-    content: 'Anak-anak saya suka sekali dengan susu pasteurisasinya. Rasanya gurih alami dan tidak bikin eneg seperti susu kemasan pabrik.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    name: 'Ibu-ibu Sekitar',
+    role: 'Pelanggan Setia',
+    content: 'Susu pasteurisasinya juara! Anak-anak saya suka sekali dan selalu minta minum susu ini setiap hari. Terasa murni dan aman.',
   }
 ];
 ---
@@ -39,7 +37,6 @@ const testimonials = [
           <p class="text-gray-600 text-lg relative z-10 italic mb-6">"{testimonial.content}"</p>
           
           <div class="flex items-center gap-4 relative z-10">
-            <img class="h-12 w-12 rounded-full object-cover" src={testimonial.avatar} alt={testimonial.name} loading="lazy" />
             <div>
               <p class="text-brand-dark font-bold">{testimonial.name}</p>
               <p class="text-gray-500 text-sm">{testimonial.role}</p>

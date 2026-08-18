@@ -1,24 +1,24 @@
 ---
 const steps = [
   {
-    time: '04:00',
-    title: 'Pemerahan Pagi',
-    description: 'Proses pemerahan higienis dilakukan pagi hari dari sapi yang sehat dan bahagia.'
+    title: 'Sapi Diperah',
+    description: 'Proses pemerahan higienis dilakukan dari sapi yang sehat.'
   },
   {
-    time: '05:30',
-    title: 'Penyaringan',
-    description: 'Susu segera disaring untuk memastikan kebersihan maksimal dari segala kotoran.'
+    title: 'Masuk Mesin',
+    description: 'Susu yang baru diperah segera dimasukkan ke dalam mesin untuk menjaga kesegarannya.'
   },
   {
-    time: '06:00',
-    title: 'Proses Pasteurisasi',
-    description: '(Untuk varian matang) Susu dipanaskan perlahan dan didinginkan cepat untuk mematikan bakteri.'
+    title: 'Susu Dimasak',
+    description: 'Susu dipanaskan perlahan (pasteurisasi) untuk mematikan bakteri tanpa merusak nutrisi alami.'
   },
   {
-    time: '07:30',
-    title: 'Mulai Pengiriman',
-    description: 'Susu dimasukkan box pendingin dan dikirimkan oleh kurir kami sebelum matahari meninggi.'
+    title: 'Didinginkan',
+    description: 'Setelah dimasak, susu didinginkan dengan cepat pada suhu presisi.'
+  },
+  {
+    title: 'Dikemas',
+    description: 'Susu dimasukkan ke dalam kemasan higienis dan siap untuk dinikmati oleh Anda.'
   }
 ];
 ---
@@ -41,15 +41,14 @@ const steps = [
           </div>
           
           <ul class="relative z-10 space-y-8">
-            {steps.map((step) => (
+            {steps.map((step, index) => (
               <li class="flex items-start">
-                <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-accent text-white font-bold text-xs ring-4 ring-white shadow-sm mt-1">
-                  {step.time.split(':')[0]}
+                <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-accent text-white font-bold text-sm ring-4 ring-white shadow-sm mt-1">
+                  {index + 1}
                 </div>
                 <div class="ml-4">
                   <h3 class="text-lg font-bold text-brand-dark flex items-center gap-2">
                     {step.title}
-                    <span class="text-sm font-medium text-brand-accent px-2 py-0.5 rounded-full bg-green-50">{step.time} WIB</span>
                   </h3>
                   <p class="mt-1 text-gray-600">{step.description}</p>
                 </div>
